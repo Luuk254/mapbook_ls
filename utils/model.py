@@ -9,3 +9,4 @@ users: list = [
      'picture': 'https://www.tomaszow-maz.pl/web/files/article/7a64df9773886be4ad405d1526f2b966przysta%C5%84%20noc%C4%85.png'},
     {"name": "Julia", "location": "Żyrardów", "posts": 50,
      'picture': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVMqaZTJbtfvPPBbBVPWRVyESHFAnmyyTb4A&s'},
+    ]
