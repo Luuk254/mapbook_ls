@@ -30,7 +30,6 @@ def update_user(users_data: list[dict]) -> None:
             user["location"] = input("Podaj nową miejscowość: ")
             user["posts"] = int(input("Podaj nową liczbę postów: "))
 
-
 def get_coordinates(city_name: str) -> list:
     address_url: str = f"https://pl.wikipedia.org/wiki/{city_name}"
     response = requests.get(address_url).text
@@ -44,12 +43,11 @@ def get_coordinates(city_name: str) -> list:
 
 def get_map(users_data: list) -> None:
     mapa = folium.Map(location=[52.3, 21.00], zoom_start=6)
-    for user in users:
+    for user in users_data:
         folium.Marker(
             location=get_coordinates(city_name=user["location"]),
             popup=f'{user["name"]}<br/>{user["location"]}<br/>{user["posts"]}<br/>'
                   f'<img src="{user["picture"]}" alt="{user["picture"]}"/>',
         ).add_to(mapa)
-
 
     mapa.save("mapa.html")
